@@ -24,16 +24,13 @@ public class XoaPhanTu {
     }
     public static int[] NewArr(int[] arr, int x) {
         int[] newArr = new int[arr.length - 1];
-        int index = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == arr[arr.length - 1]) {
-                continue;
+        for (int i = 0; i < arr.length - 1 ; i++) {
+            if (arr[i] >= x) {
+                newArr[i] = arr[i + 1];
+            }else {
+                newArr[i] = arr[i];
             }
-            if (arr[i] == x) {
-                i = i + 1 ;
-            }
-            newArr[index] = arr[i];
-            index++ ;
+
         }
         return newArr;
 
